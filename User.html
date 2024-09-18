@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LearnEd</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(window).on('scroll', function(){
+            if ($(window).scrollTop()) {
+                $('nav').addClass('black');
+            } else {
+                $('nav').removeClass('black');
+            }
+        });
+
+        // Check if the user is logged in on page load
+        function checkLoginStatus() {
+            const isLoggedIn = sessionStorage.getItem('loggedIn');
+            if (!isLoggedIn) {
+                window.location.href = 'index.html';  // Redirect if not logged in
+            }
+        }
+
+        // Logout function to clear session storage and redirect to login page
+        function logout() {
+            sessionStorage.removeItem('loggedIn');  // Clear session
+            window.location.href = 'index.html';  // Redirect to login page
+        }
+
+        // Check login status on window load
+        window.onload = checkLoginStatus;
+    </script>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <div class="logo"><a href="User.html"><img src="logo.png" alt="logo"></a></div>
+            <ul>
+                <li><a class="active" href="">Home</a></li>
+                <li><a href="code.html">Code</a></li>
+                <li><a href="#team_section">Team</a></li>
+                <li><a href="#services_section">Services</a></li>
+                <li><a href="#contactus_section">Contact</a></li>
+            </ul>
+            <div class="srch"><input type="text" class="search" placeholder="Search here..."><img src="search.png" alt="search"></div>
+            <img src="menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+            <!-- Move the logout button here -->
+            <a class="get-started" href="#" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Rest of the page content -->
+    <div class="title">
+        <span>Popular Subjects on LearnEd</span>
+    </div>
+
+    <!-- Other content -->
+    <div class="course">
+        <center>
+            <div class="cbox">
+                <div class="det"><a href="jee.html"><img src="book.png">JEE Preparation</a></div>
+                <div class="det"><a href="gate.html"><img src="d1.png">GATE Preparation</a></div>
+                <div class="det"><a href="jee.html#sample_papers"><img src="paper.png">Sample Papers</a></div>
+                <div class="det"><a href="quiz.html"><img src="d1.png">Daily Quiz</a></div>
+            </div>
+        </center>
+        <div class="cbox">
+            <div class="det"><a href="computer_courses.html"><img src="computer.png">Computer Courses</a></div>
+            <div class="det"><a href="computer_courses.html#data"><img src="data.png">Data Structures</a></div>
+            <div class="det"><a href="computer_courses.html#algo"><img src="algo.png">Algorithm</a></div>
+            <div class="det det-last"><a href="computer_courses.html#projects"><img src="projects.png">Projects</a></div>
+        </div>
+    </div>
+
+    <!-- Additional sections -->
+
+    <!-- About -->
+    <div class="diffSection" id="about_section">
+        <center><p style="font-size: 50px; padding: 100px">About</p></center>
+        <div class="about-content">
+            <div class="side-image">
+                <img class="sideImage" src="e3.jpg">
+            </div>
+            <div class="side-text">
+                <h2>What you think about us?</h2>
+                <p>Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion, and directed research.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rest of the sections -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="left-col">
+                <img src="logo - Copy.png" style="width: 200px;">
+                <div class="logo"></div>
+                <div class="social-media">
+                    <a href="#"><img src="fb.png"></a>
+                    <a href="#"><img src="insta.png"></a>
+                    <a href="#"><img src="tt.png"></a>
+                    <a href="#"><img src="ytube.png"></a>
+                    <a href="#"><img src="linkedin.png"></a>
+                </div><br><br>
+                <p class="rights-text">Copyright © 2024 Created By Chaudhry Rashid, Naveed Chaudhry All Rights Reserved.</p>
+                <br><p><img src="location.png"> <br>Highpoint, NC 27263</p><br>
+                <p><img src="phone.png"> +1-336-123-456<br><img src="mail.png">&nbsp; rohailch2023@outlook.com</p>
+            </div>
+            <div class="right-col">
+                <h1 style="color: #fff">Our Newsletter</h1>
+                <div class="border"></div><br>
+                <p>Enter Your Email to get our News and updates.</p>
+                <form class="newsletter-form">
+                    <input class="txtb" type="email" placeholder="Enter Your Email">
+                    <input class="btn" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
